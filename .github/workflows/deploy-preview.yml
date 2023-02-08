@@ -18,10 +18,10 @@ jobs:
       - run: npm run build
       - name: GitHub Action for Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
-            args: deploy --only functions
-            repoToken: "${{ secrets.GITHUB_TOKEN }}"
-            firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_PARKING }}"
-            expires: 30d
-            projectId: flutter-parking-377202
+        with:
+          args: deploy --only functions
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_PARKING }}"
+          expires: 30d
+          projectId: flutter-parking-377202
           
