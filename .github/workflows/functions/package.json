@@ -1,0 +1,47 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "predeploy": "npm --prefix ./functions/ run lint",
+    "logs": "firebase functions:log",
+    "test": "ts-node src/test.ts"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/node": "^18.7.17",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.1.1",
+    "node-fetch": "^2.6.7",
+    "sanctions": "github:amlcloud/sanctions",
+    "spreadsheet-stream": "^1.0.2",
+    "ts-node": "^10.9.1",
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/node-fetch": "^2.6.2",
+    "@types/xml2js": "^0.4.11",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.3",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
