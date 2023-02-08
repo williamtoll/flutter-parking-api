@@ -15,9 +15,10 @@ jobs:
       - uses: actions/checkout@v2
       # Add any build steps here. For example:
       # - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          projectId: flutter-parking-377202
-          channelId: live
+      - name: GitHub Action for Firebase
+        - uses: FirebaseExtended/action-hosting-deploy@v0
+          with:
+            repoToken: "${{ secrets.GITHUB_TOKEN }}"
+            firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_PARKING }}"
+            expires: 30d
+            projectId: flutter-parking-377202
