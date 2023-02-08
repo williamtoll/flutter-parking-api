@@ -14,9 +14,12 @@ jobs:
       # Add any build steps here. For example:
       # - run: npm ci && npm run build
       # - run firebase deploy --only functions
+      - run: npm ci
+      - run: npm run build
       - name: GitHub Action for Firebase
-        - uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@v0
           with:
+            args: deploy --only functions
             repoToken: "${{ secrets.GITHUB_TOKEN }}"
             firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_PARKING }}"
             expires: 30d
